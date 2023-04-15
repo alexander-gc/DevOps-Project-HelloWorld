@@ -26,9 +26,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: npm install
+        run: cd capstone_project/hello-world && npm install
       - name: Build
-        run: npm run build
+        run: cd capstone_project/hello-world && npm run build
 
   deploy_docker:
     needs: [test, build]
