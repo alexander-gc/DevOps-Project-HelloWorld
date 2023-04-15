@@ -40,9 +40,5 @@ jobs:
         run: cd capstone_project/hello-world && docker build -t hello-devops .
       - name: Run Docker Container
         run: cd capstone_project/hello-world && docker run -d -p 3000:3000 hello-devops
-        env:
-          DOCKER_CONTAINER_ID: $(docker ps -q --filter ancestor=hello-devops)
-      - name: Get Container ID
-        run: echo "Container ID $DOCKER_CONTAINER_ID"
       - name: Stop Docker Container
-        run: docker stop $DOCKER_CONTAINER_ID
+        run: docker stop $(docker ps -q)
