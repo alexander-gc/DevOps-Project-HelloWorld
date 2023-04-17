@@ -4,7 +4,9 @@ RUN apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install -y \
     nodejs \
-    npm
+    npm \
+    ssh \
+    sudo 
 
 WORKDIR /app
 
