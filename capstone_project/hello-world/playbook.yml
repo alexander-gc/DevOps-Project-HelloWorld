@@ -1,0 +1,10 @@
+---
+- name: update App.js file with Hello DevOps!
+  hosts: reactapp
+
+  tasks:
+    - name: Update App.js file
+      ansible.builtin.lineinfile:
+        path: /hello-world/src/App.js
+        regexp: "^Hello World!"
+        line: "Hello DevOps!"
